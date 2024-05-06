@@ -14,11 +14,11 @@ if($method==='POST'){
         $datacontent = json_encode($newdata, JSON_PRETTY_PRINT);
         file_put_contents('data.json', $datacontent);
     }
-} elseif ($method==='DELETE'){
+} if ($method==='DELETE'){
     $newdata = json_decode($datacontent, true);
     $object = json_decode(file_get_contents('php://input'), true);
     $objId= $object['id'];
-    array_slice($newdata, $objId, 1);
+    array_splice($newdata, $objId, 1);
     $datacontent = json_encode($newdata, JSON_PRETTY_PRINT);
     file_put_contents('data.json', $datacontent);
 }

@@ -1,12 +1,7 @@
 [
     {
         "id": 1,
-        "text": "default item",
-        "done": false
-    },
-    {
-        "id": 2,
-        "text": "dadw",
+        "text": "dsad",
         "done": true
     }
 ]

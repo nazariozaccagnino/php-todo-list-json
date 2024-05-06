@@ -9,9 +9,9 @@ createApp({
             itemText : '',
             todo:[
                 {
-                    "id": 1,
-                    "text": "default item",
-                    "done": false
+                    "id": "",
+                    "text": "",
+                    "done": "false"
                 }
             ],
             myendpoint: 'server.php',          
@@ -26,7 +26,7 @@ createApp({
             item.done = !item.done
         },
         removeItem(id){
-            let index = this.todo.findIndex((el)=> el.id === id);                       
+            // let index = this.todo.findIndex((el)=> el.id === id);                       
             //this.todo.splice(index, 1);
             const data ={
                 id: id
@@ -45,10 +45,11 @@ createApp({
             let nextId = 0;
             this.todo.forEach((el) => {
                 if(nextId < el.id){
-                    nextId = el.id
+                    // nextId = el.id
+                    newItem.id = nextId + 1;
+
                 }
             });
-            newItem.id = nextId + 1;
 
             const data = new FormData();
             data.append('id', newItem.id);
