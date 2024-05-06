@@ -57,10 +57,16 @@ createApp({
             //console.log(this.todo);
 
         },
+        getData(){
+            axios.get(this.myendpoint).then((res)=>{
+                this.todo = res.data
+            })
+        },
         flushArray(){
             this.todo.length = 0;
         }
     },
     mounted(){
+        this.getData()
     }
 }).mount('#app')

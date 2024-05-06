@@ -15,3 +15,5 @@ if(isset($_POST['id'])){
 }
 
 //var_dump($_POST);
+header('Content-type: application/json');
+echo $datacontent;
