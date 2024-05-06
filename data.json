@@ -5,18 +5,8 @@
         "done": false
     },
     {
-        "id": "3",
-        "text": "adssa",
-        "done": "false"
-    },
-    {
-        "id": "2",
-        "text": "",
-        "done": "false"
-    },
-    {
-        "id": "3",
-        "text": "",
-        "done": "false"
+        "id": 2,
+        "text": "dadw",
+        "done": true
     }
 ]

@@ -26,9 +26,15 @@ createApp({
             item.done = !item.done
         },
         removeItem(id){
-            let index = this.todo.findIndex((el)=> el.id === id)
-            // console.log(index);            
-            this.todo.splice(index, 1)            
+            let index = this.todo.findIndex((el)=> el.id === id);                       
+            //this.todo.splice(index, 1);
+            const data ={
+                id: id
+            }
+            axios.delete(this.myendpoint, {data}).then((res)=>{
+                this.todo = res.data
+
+            })   
         },
         addItem(){
             const newItem = {
@@ -43,7 +49,6 @@ createApp({
                 }
             });
             newItem.id = nextId + 1;
-            this.todo.push(newItem);
 
             const data = new FormData();
             data.append('id', newItem.id);
@@ -52,6 +57,8 @@ createApp({
 
             axios.post(this.myendpoint, data).then((res)=>{
                 console.log(res.data);
+                this.todo.push(newItem);
+
             });
             this.itemText ='';
             //console.log(this.todo);
