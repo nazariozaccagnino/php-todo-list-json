@@ -38,12 +38,13 @@ createApp({
             newItem.id = nextId + 1;
             this.todo.push(newItem);
             this.itemText ='';
+            console.log(this.todo);
+
         },
         flushArray(){
             this.todo.length = 0;
         }
     },
     mounted(){
-        // console.log(this.todo);
     }
 }).mount('#app')
