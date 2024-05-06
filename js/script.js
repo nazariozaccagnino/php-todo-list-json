@@ -23,6 +23,7 @@ createApp({
                 return el.id === id                
             })
             // console.log(item);
+            if(item.done === "false")
             item.done = !item.done
         },
         removeItem(id){

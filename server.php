@@ -8,7 +8,7 @@ if($method==='POST'){
         $newItem=[
             'id'=> (int)$_POST['id'],
             'text'=>$_POST['text'],
-            'done'=>(bool)$_POST['done']
+            'done'=>$_POST['done']
         ];
         $newdata[] = $newItem;
         $datacontent = json_encode($newdata, JSON_PRETTY_PRINT);
