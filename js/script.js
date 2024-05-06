@@ -13,7 +13,8 @@ createApp({
                     "text": "default item",
                     "done": false
                 }
-            ],            
+            ],
+            myendpoint: 'server.php',          
         }
     },
     methods: {
@@ -43,8 +44,17 @@ createApp({
             });
             newItem.id = nextId + 1;
             this.todo.push(newItem);
+
+            const data = new FormData();
+            data.append('id', newItem.id);
+            data.append('text', newItem.text);
+            data.append('done', newItem.done);
+
+            axios.post(this.myendpoint, data).then((res)=>{
+                console.log(res.data);
+            });
             this.itemText ='';
-            console.log(this.todo);
+            //console.log(this.todo);
 
         },
         flushArray(){
