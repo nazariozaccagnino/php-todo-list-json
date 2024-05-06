@@ -1,13 +1,19 @@
-import {todo} from './data.js'
+//import {todo} from '../data.js'
 
 const {createApp} = Vue;
 
 createApp({
     data(){
         return{
-            todo : todo,
+            //todo : todo,
             itemText : '',
-            
+            todo:[
+                {
+                    "id": 1,
+                    "text": "default item",
+                    "done": false
+                }
+            ],            
         }
     },
     methods: {
